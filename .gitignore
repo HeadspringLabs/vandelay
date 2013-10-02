@@ -109,3 +109,5 @@ UpgradeLog*.XML
 
 # Project specific ignores
 vandelay-data/
+src/Core/Database/
+src/Core/Raven/
