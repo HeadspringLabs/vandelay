@@ -4,7 +4,9 @@ namespace Core.Models
     {
         public Jurisdiction To { get; set; }
 
-        public decimal Price { get; set; }
+        public Money Tarriff { get; set; }
+
+        public Money Price { get; set; }
 
         public int Quantity { get; set; }
 

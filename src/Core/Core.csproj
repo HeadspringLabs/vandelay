@@ -158,19 +158,27 @@
     <Compile Include="App_Start\FormattingConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ExchangeRateController.cs" />
+    <Compile Include="Controllers\ExportController.cs" />
     <Compile Include="Controllers\TestDataController.cs" />
     <Compile Include="Controllers\EnumerationController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\EntityController.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\MoneyExtensions.cs" />
+    <Compile Include="Extensions\PrimitiveExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Headspring\Enumeration.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Currency.cs" />
+    <Compile Include="Models\ExchangeRate.cs" />
+    <Compile Include="Models\Money.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Export.cs" />
     <Compile Include="Models\Import.cs" />
+    <Compile Include="Models\ImportType.cs" />
     <Compile Include="Models\Jurisdiction.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Measure.cs" />

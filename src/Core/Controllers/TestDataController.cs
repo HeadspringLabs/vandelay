@@ -23,13 +23,13 @@ namespace Core.Controllers
         };
 
         private static readonly Export[] _exports = new[] {
-            new Export { Name = "Long Matches", To = Jurisdiction.Canada, Price = 240m, Quantity = 6, Measure = Measure.Crate },
-            new Export { Name = "Chips, potato", To = Jurisdiction.France, Price = 60m, Quantity = 4, Measure = Measure.InsulatedContainer },
-            new Export { Name = "Chips, corn", To = Jurisdiction.Finland, Price = 40m, Quantity = 4, Measure = Measure.InsulatedContainer },
-            new Export { Name = "Diapers", To = Jurisdiction.Spain, Price = 12500m, Quantity = 1, Measure = Measure.Container },
-            new Export { Name = "Toilet Paper", To = Jurisdiction.Canada, Price = 300m, Quantity = 3, Measure = Measure.BulkContainer },
-            new Export { Name = "Non-Fat Yogurt", To = Jurisdiction.Mexico, Price = 60m, Quantity = 2, Measure = Measure.Drum },
-            new Export { Name = "Space Pens", To = Jurisdiction.Japan, Price = 8575m, Quantity = 144, Measure = Measure.WoodenBox },
+            new Export { Name = "Long Matches", To = Jurisdiction.Canada, Price = 240m.USD(), Quantity = 6, Measure = Measure.Crate },
+            new Export { Name = "Chips, potato", To = Jurisdiction.France, Price = 60m.Euro(), Quantity = 4, Measure = Measure.InsulatedContainer },
+            new Export { Name = "Chips, corn", To = Jurisdiction.Finland, Price = 40m.Euro(), Quantity = 4, Measure = Measure.InsulatedContainer },
+            new Export { Name = "Diapers", To = Jurisdiction.Spain, Price = 12500m.USD(), Quantity = 1, Measure = Measure.Container },
+            new Export { Name = "Toilet Paper", To = Jurisdiction.Canada, Price = 300m.USD(), Quantity = 3, Measure = Measure.BulkContainer },
+            new Export { Name = "Non-Fat Yogurt", To = Jurisdiction.Mexico, Price = 60m.USD(), Quantity = 2, Measure = Measure.Drum },
+            new Export { Name = "Space Pens", To = Jurisdiction.Japan, Price = 8575m.USD(), Quantity = 144, Measure = Measure.WoodenBox },
         };
 
         public HttpResponseMessage Post()
