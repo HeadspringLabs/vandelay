@@ -12,6 +12,8 @@ namespace Core.Controllers
 
     public class LocationController : EntityController<Location> { }
 
+    public class SalesAgentController : EntityController<SalesAgent> { }
+
     public abstract class EntityController<T> : StoreController where T : Entity
     {
         public Task<T> Get(int id)

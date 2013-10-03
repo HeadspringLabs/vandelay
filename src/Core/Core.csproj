@@ -158,9 +158,11 @@
     <Compile Include="App_Start\FormattingConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\TestDataController.cs" />
     <Compile Include="Controllers\EnumerationController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\EntityController.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,6 +173,8 @@
     <Compile Include="Models\Import.cs" />
     <Compile Include="Models\Jurisdiction.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Measure.cs" />
+    <Compile Include="Models\SalesAgent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
