@@ -37,6 +37,11 @@ namespace Core.Models
             }
         }
 
+        public static implicit operator decimal(Money money)
+        {
+            return money._money;
+        }
+
         public static bool operator ==(Money left, Money right)
         {
             return Equals(left, right);
