@@ -111,3 +111,5 @@ UpgradeLog*.XML
 vandelay-data/
 src/Core/Database/
 src/Core/Raven/
+src/Core/connections.config
+
