@@ -20,10 +20,9 @@ namespace Core.Controllers
 
         private static readonly Lazy<IDocumentStore> LazyDocStore = new Lazy<IDocumentStore>(() =>
         {
-            var store = new EmbeddableDocumentStore { DataDirectory = "vandelay-data" };
-            //var store = new DocumentStore { DefaultDatabase = "VandelayData", Url = "http://localhost:8080" };
-            store.Initialize();
-            return store;
+            var documentStore = new DocumentStore { ConnectionStringName = "RavenDB" };
+            documentStore.Initialize();
+            return documentStore;
         });
 
         public IAsyncDocumentSession Session { get; set; }
