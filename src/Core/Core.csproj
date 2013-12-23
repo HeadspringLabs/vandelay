@@ -163,6 +163,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ExchangeRateController.cs" />
     <Compile Include="Controllers\ExportController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestDataController.cs" />
     <Compile Include="Controllers\EnumerationController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
@@ -192,6 +193,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Headspring\LICENSE.txt" />
+    <None Include="Scripts\Vendor\jquery-1.8.3.intellisense.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\Vendor\ember-1.2.0.debug.js" />
+    <Content Include="Scripts\Vendor\ember-1.2.0.js" />
+    <Content Include="Scripts\Vendor\ember-1.2.0.min.js" />
+    <Content Include="Scripts\Vendor\handlebars-1.1.2.js" />
+    <Content Include="Scripts\Vendor\handlebars.runtime-1.1.2.js" />
+    <Content Include="Scripts\Vendor\jquery-1.8.3.js" />
+    <Content Include="Scripts\Vendor\jquery-1.8.3.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -205,6 +215,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
