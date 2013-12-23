@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Core
 {
@@ -8,6 +7,23 @@ namespace Core
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+			var emberBundle = new ScriptBundle("~/bundles/ember")
+				.Include( new[] {
+					  "~/Scripts/Vendor/jquery-{version}.js"
+					, "~/Scripts/Vendor/handlebars-{version}.js"	
+					, "~/Scripts/Vendor/ember-{version}.js"	
+				})
+				;
+
+			var appBundle = new ScriptBundle("~/bundles/app")
+				.Include(new[]
+				{
+					"~/Scripts/app.js"
+				})
+				;
+
+			bundles.Add(emberBundle);
+			bundles.Add(appBundle);
         }
     }
 }
