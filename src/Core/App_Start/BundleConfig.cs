@@ -12,6 +12,7 @@ namespace Core
 					  "~/Scripts/Vendor/jquery-{version}.js"
 					, "~/Scripts/Vendor/handlebars-{version}.js"	
 					, "~/Scripts/Vendor/ember-{version}.js"	
+					, "~/Scripts/Vendor/ember-model.js"	
 				})
 				;
 
@@ -19,7 +20,9 @@ namespace Core
 				.Include(new[]
 				{
 					"~/Scripts/app.js"
+					, "~/Scripts/models.js"
 				})
+				.IncludeDirectory("~/Scripts/Pages/", "*.js")
 				;
 
 			bundles.Add(emberBundle);
