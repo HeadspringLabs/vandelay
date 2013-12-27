@@ -1,8 +1,13 @@
 ﻿var partialsDir = 'Content/app/partials/';
 
-angular.module('vandelay', []).
-    config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.
-            when('/', { templateUrl: partialsDir + 'index.html', controller: HomePage }).
+var vandelayApp = angular.module('vandelayApp', [
+  'ngRoute',
+  'ngResource'
+]);
+
+vandelayApp.config(['$routeProvider',
+    function (routeProvider) {
+        routeProvider.
             otherwise({ redirectTo: '/' });
-    }]);
+    }
+]);

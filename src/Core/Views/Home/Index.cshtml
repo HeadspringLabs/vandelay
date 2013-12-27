@@ -1,1 +1,17 @@
-﻿<p>Nothing {{'to' + ' ' + 'see'}} here!</p>
+﻿<div ng-controller="HomePageCtrl">
+    Home - {{ message }}
+</div>
+
+<div ng-controller="SalesAgentCtrl">
+    <h3>Sales Agents</h3>
+    <ul ng-repeat="agent in agents">
+        <li>{{ agent.name }} - {{ agent.location }}</li>
+    </ul>
+</div>
+
+<div ng-controller="LocationCtrl">
+    <h3>Locations</h3>
+    <ul ng-repeat="location in locations">
+        <li>{{ location }}</li>
+    </ul>
+</div>
