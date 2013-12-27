@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" ng-app>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
 </head>
 <body>
     @RenderBody()
