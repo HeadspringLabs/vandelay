@@ -15,4 +15,5 @@ App.Adapter = Ember.RESTAdapter.extend({
 
 App.Router.map(function () {
 	this.route("locations");
+	this.route("salesAgents");
 });
