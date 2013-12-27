@@ -9,6 +9,10 @@
 	<body>
 		<script type="text/x-handlebars" data-template-name="application">
 			<h1>Vandelay Industries</h1>
+			<nav><ul>
+			<li> {{#linkTo "index"}} Home {{/linkTo}} </li>
+			<li> {{#linkTo "locations"}} Locations {{/linkTo}} </li>
+			</ul></nav>
 			{{outlet}}
 		</script>
 		
@@ -17,5 +21,19 @@
 			<p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
 			<p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
 		</script>
+		
+		<script type="text/x-handlebars" data-template-name="locations">
+			<h2>Locations</h2>
+			<p>Ubiquitous deliverables podcasting; mesh dynamic infrastructures embrace one-to-one harness ecologies repurpose transition. Life-hacks utilize; integrate design, incentivize revolutionize; viral schemas strategic vortals virtual content. E-commerce engage dynamic transparent B2C e-markets; bandwidth, remix reintermediate; open-source; life-hacks e-enable envisioneer. Synergies scalable user-centred blogospheres; networks matrix dynamic communities 24/7 functionalities." Vortals, robust virtual plug-and-play, podcasts 24/365 widgets wireless long-tail share; integrated frictionless evolve. Tagclouds feeds long-tail reintermediate frictionless tag, synthesize open-source share synergies dot-com solutions front-end sexy channels bricks-and-clicks beta-test. Repurpose disintermediate syndicate systems, sexy reintermediate addelivery revolutionary. Technologies; dynamic whiteboard integrate syndicate dynamic. Integrate, monetize scale cross-media vertical brand world-class podcasts incentivize utilize clicks-and-mortar virtual infomediaries.</p>
+			{{#each}}
+				<h3>{{name}}</h3>
+				<h4>Office</h4>
+				Address: {{address.address1}} {{address.address2}}
+				<br/> City: {{address.city}}
+				<br/> State: {{address.state}}
+				<br/> Country: {{address.country}}
+			{{/each}}
+		</script>
+
 	</body>
 </html>
