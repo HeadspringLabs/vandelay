@@ -3,3 +3,12 @@
 		return App.SalesAgent.find();
 	}
 });
+
+
+App.SalesAgentsController = Ember.ArrayController.extend({
+	
+});
+
+App.SalesAgentController = Ember.ObjectController.extend({
+	
+});
