@@ -48,14 +48,27 @@
 					<th>Imports</th>
 				</tr></thead>
 				<tbody>
-					{{#each}}<tr>
-						<td>{{name}}</td>
-						<td>{{location.name}}</td>
-						<td>{{imports.length}}</td>
-						<td>{{exports.length}}</td>
+					{{#each agent in controller}}<tr>
+						<td>{{#linkTo "salesAgent" agent}}{{agent.name}}{{/linkTo}}</td>
+						<td>{{agent.location.name}}</td>
+						<td>{{agent.imports.length}}</td>
+						<td>{{agent.exports.length}}</td>
 					</tr>{{/each}}
 				</tbody>
 			</table>
+		</script>
+		<script type="text/x-handlebars" data-template-name="salesAgent">
+			<img {{bindAttr src="imageUrl"}} alt="Photo" />
+			<h2>{{name}}</h2>
+			{{location.name}}
+			<h3>Imports</h3>
+			{{#each import in imports}}
+			{{/each}}
+			<h3>Exports</h3>
+			{{#each export in exports}}
+			{{/each}}
+		
+		
 		</script>
 	</body>
 </html>
