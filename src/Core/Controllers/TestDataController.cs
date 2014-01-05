@@ -15,13 +15,13 @@ namespace Core.Controllers
             new Location { Name = "Vandelay Industries", Address = new Address { Address1 = "3100 W 45th St", Address2 = "Apt 5B", City = "New York", State = "NY" } },
         };
 
-        private static readonly SalesAgent[] _salesAgents = new[] {
-            new SalesAgent { Name = "Art Vandelay", Location = _locations[0] },
-            new SalesAgent { Name = "Biff Loman", Location = _locations[0] },
-            new SalesAgent { Name = "H.E. Pennpacker", Location = _locations[1] },
-            new SalesAgent { Name = "Kal Varnsen", Location = _locations[2] },
-            new SalesAgent { Name = "Dr. Martin van Nostrand", Location = _locations[2] },
-            new SalesAgent { Name = "Lloyd Braun", Location = _locations[2] },
+		private static readonly SalesAgent[] _salesAgents = new[] {
+            new SalesAgent { Name = "Art Vandelay", Location = _locations[0], ImageUrl = "http://s3.amazonaws.com/quarkbase_test.com/art-vandelay-325813.jpg"},
+            new SalesAgent { Name = "Biff Loman", Location = _locations[0], ImageUrl = "http://thewallmachine.com/files/1319758415.jpg"},
+            new SalesAgent { Name = "H.E. Pennpacker", Location = _locations[1], ImageUrl = "http://i.ytimg.com/vi/fP7lTqKaeL4/0.jpg"},
+            new SalesAgent { Name = "Kal Varnsen", Location = _locations[2], ImageUrl = "http://25.media.tumblr.com/tumblr_koendeWMiX1qzoafno1_500.jpg"},
+            new SalesAgent { Name = "Dr. Martin van Nostrand", Location = _locations[2], ImageUrl = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/188194_212831155393655_1877134_n.jpg"},
+            new SalesAgent { Name = "Lloyd Braun", Location = _locations[2], ImageUrl = "http://www.siyumhaseinfeld.com/images/chars/lloyd.jpg"},
         };
 
 	    private Random _random;
