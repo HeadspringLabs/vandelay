@@ -4,6 +4,11 @@
 	}
 });
 
+App.SalesAgentRoute = Ember.Route.extend({
+	model: function(params) {
+		return App.SalesAgent.findById(params.id);
+	}
+});
 
 App.SalesAgentsController = Ember.ArrayController.extend({
 	
