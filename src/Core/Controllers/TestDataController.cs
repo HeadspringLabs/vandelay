@@ -34,13 +34,13 @@ namespace Core.Controllers
 
         public HttpResponseMessage Post()
         {
-            using (Session = Store.OpenAsyncSession())
+            using (var documentSession = Store.OpenSession())
             {
-                _locations.ForEach(x => Session.StoreAsync(x));
-                _salesAgents.ForEach(x => Session.StoreAsync(x));
-                _exports.ForEach(x => Session.StoreAsync(x));
+                _locations.ForEach(documentSession.Store);
+				_salesAgents.ForEach(documentSession.Store);
+				_exports.ForEach(documentSession.Store);
 
-                Session.SaveChangesAsync();
+				documentSession.SaveChanges();
             }
 
             return new HttpResponseMessage(HttpStatusCode.OK);
