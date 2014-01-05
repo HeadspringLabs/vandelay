@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using Core.Extensions;
@@ -22,23 +24,29 @@ namespace Core.Controllers
             new SalesAgent { Name = "Lloyd Braun", Location = _locations[2] },
         };
 
-        private static readonly Export[] _exports = new[] {
-            new Export { Name = "Long Matches", To = Jurisdiction.Canada, Price = 240m.USD(), Quantity = 6, Measure = Measure.Crate },
-            new Export { Name = "Chips, potato", To = Jurisdiction.France, Price = 60m.Euro(), Quantity = 4, Measure = Measure.InsulatedContainer },
-            new Export { Name = "Chips, corn", To = Jurisdiction.Finland, Price = 40m.Euro(), Quantity = 4, Measure = Measure.InsulatedContainer },
-            new Export { Name = "Diapers", To = Jurisdiction.Spain, Price = 12500m.USD(), Quantity = 1, Measure = Measure.Container },
-            new Export { Name = "Toilet Paper", To = Jurisdiction.Canada, Price = 300m.USD(), Quantity = 3, Measure = Measure.BulkContainer },
-            new Export { Name = "Non-Fat Yogurt", To = Jurisdiction.Mexico, Price = 60m.USD(), Quantity = 2, Measure = Measure.Drum },
-            new Export { Name = "Space Pens", To = Jurisdiction.Japan, Price = 8575m.USD(), Quantity = 144, Measure = Measure.WoodenBox },
-        };
+	    private Random _random;
 
-        public HttpResponseMessage Post()
+	    public HttpResponseMessage Post()
         {
+			_random = new Random();
+
             using (var documentSession = Store.OpenSession())
             {
                 _locations.ForEach(documentSession.Store);
-				_salesAgents.ForEach(documentSession.Store);
-				_exports.ForEach(documentSession.Store);
+
+	            foreach (var agent in _salesAgents)
+	            {
+					var exports = GetRandomExports(20).ToList();
+					var imports = GetRandomImports(20).ToList();
+
+					exports.ForEach(documentSession.Store);
+					imports.ForEach(documentSession.Store);
+
+					agent.Exports = exports;
+					agent.Imports = imports;
+
+					documentSession.Store(agent);
+	            }
 
 				documentSession.SaveChanges();
             }
@@ -59,10 +67,69 @@ namespace Core.Controllers
                 var exports = session.Query<Export>();
                 exports.ForEach(session.Delete);
 
+				var imports = session.Query<Import>();
+				imports.ForEach(session.Delete);
+
                 session.SaveChanges();
             }
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
+
+		private Export[] GetRandomExports(int count)
+		{
+			var exports = new Export[count];
+			for (var i = 0; i < exports.Length; i++)
+			{
+				var jurisdiction = Jurisdiction.FromInt32(_random.Next(Jurisdiction.GetAll().Length) + 1);
+
+				exports[i] = new Export
+				{
+					Price = (decimal)Math.Round(_random.NextDouble() * 5000, 2),
+					Quantity = _random.Next(10000),
+					Measure = Measure.FromInt32(_random.Next(Measure.GetAll().Length) + 1),
+					To = jurisdiction,
+					Name = string.Format("{0} to {1}", RandomGoodsName(), jurisdiction.DisplayName)
+				};
+			}
+
+			return exports;
+		}
+
+		private Import[] GetRandomImports(int count)
+		{
+			var imports = new Import[count];
+			for (var i = 0; i < imports.Length; i++)
+			{
+				var jurisdiction = Jurisdiction.FromInt32(_random.Next(Jurisdiction.GetAll().Length) + 1);
+
+				imports[i] = new Import
+				{
+					Price = (decimal)Math.Round(_random.NextDouble() * 5000, 2),
+					Quantity = _random.Next(10000),
+					Type = ImportType.FromInt32(_random.Next(ImportType.GetAll().Length) + 1),
+					From = jurisdiction,
+					Name = string.Format("{0} from {1}", RandomGoodsName(), jurisdiction.DisplayName)
+				};
+			}
+
+			return imports;
+		}
+
+		private string RandomGoodsName()
+		{
+			var goods = new[]
+				{
+					"Long Matches",
+					"Chips, potato",
+					"Chips, corn",
+					"Diapers",
+					"Toilet Paper",
+					"Non-Fat Yogurt"
+				};
+
+			var randomIndex = _random.Next(goods.Length);
+			return goods[randomIndex];
+		}
     }
 }
