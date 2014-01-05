@@ -197,6 +197,7 @@
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\models.js" />
     <Content Include="Scripts\Pages\locations.js" />
+    <Content Include="Scripts\Pages\salesAgents.js" />
     <Content Include="Scripts\Vendor\ember-1.2.0.debug.js" />
     <Content Include="Scripts\Vendor\ember-1.2.0.js" />
     <Content Include="Scripts\Vendor\ember-1.2.0.min.js" />
