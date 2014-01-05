@@ -62,13 +62,47 @@
 			<h2>{{name}}</h2>
 			{{location.name}}
 			<h3>Imports</h3>
+			<table>
+				<thead><tr>
+					<th>Name</th>
+					<th>Type</th>
+					<th>From</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr></thead>
+				<tbody>
 			{{#each import in imports}}
+				<tr>
+					<td>{{import.name}}</td>
+					<td>{{import.type}}</td>
+					<td>{{import.from}}</td>
+					<td>{{import.quantity}}</td>
+					<td>${{import.price}}</td>
+				</tr>
 			{{/each}}
+				</tbody>
+			</table>
 			<h3>Exports</h3>
+			<table>
+				<thead><tr>
+					<th>Name</th>
+					<th>Measure</th>
+					<th>To</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr></thead>
+				<tbody>
 			{{#each export in exports}}
+				<tr>
+					<td>{{export.name}}</td>
+					<td>{{export.measure}}</td>
+					<td>{{export.to}}</td>
+					<td>{{export.quantity}}</td>
+					<td>${{export.price}}</td>
+				</tr>
 			{{/each}}
-		
-		
+				</tbody>
+			</table>		
 		</script>
 	</body>
 </html>
