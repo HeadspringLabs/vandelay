@@ -35,29 +35,22 @@
 				<br/> Country: {{address.country}}
 			{{/each}}
 		</script>
-		
+
 		<script type="text/x-handlebars" data-template-name="salesAgents">
 			<h2>Sales Agents</h2>
 			<p>Holistic implement schemas bandwidth visionary aggregate distributed innovative Cluetrain; collaborative dynamic customized reinvent. Engineer, e-services schemas world-class synergistic maximize vortals applications semantic, "clicks-and-mortar relationships," B2B, leverage viral. </p>
 			<p>Collaborative, standards-compliant rss-capable web-readiness B2B addelivery leading-edge citizen-media viral magnetic. Productize, blogospheres 24/365 sexy visualize e-business B2C customized repurpose, synergies; podcasting relationships iterate experiences utilize cultivate rich-clientAPIs. Mashups bleeding-edge empower data-driven e-markets mashups. Users collaborative streamline systems systems engineer utilize matrix target. Orchestrate killer supply-chains next-generation, aggregate tagclouds beta-test revolutionize wikis functionalities user-centred, "incubate: target maximize matrix mesh," facilitate one-to-one revolutionize, mashups; drive matrix! Paradigms dynamic extensible interactive enhance next-generation metrics seize." Models reinvent, eyeballs granular, utilize functionalities; granular aggregate reinvent frictionless infomediaries solutions, sticky. Long-tail long-tail; infomediaries, brand platforms engineer streamline viral generate extensible, convergence out-of-the-box systems wikis ubiquitous, "monetize initiatives." Supply-chains engage revolutionary dynamic revolutionize solutions podcasts content supply-chains post.</p>
-			<table>
-				<thead><tr>
-					<th>Name</th>
-					<th>Location</th>
-					<th>Exports</th>
-					<th>Imports</th>
-				</tr></thead>
-				<tbody>
-					{{#each agent in controller}}<tr>
-						<td>{{#linkTo "salesAgent" agent}}{{agent.name}}{{/linkTo}}</td>
-						<td>{{agent.location.name}}</td>
-						<td>{{agent.imports.length}}</td>
-						<td>{{agent.exports.length}}</td>
-					</tr>{{/each}}
-				</tbody>
-			</table>
+			<nav><ul>
+				{{#each agent in controller}}
+						<li>{{#linkTo "salesAgents.detail" agent}} {{agent.name}} {{/linkTo}}</li>
+				{{else}}
+					<li>No Agents Found</li>
+				{{/each}}
+			</ul></nav>
+			{{outlet}}
 		</script>
-		<script type="text/x-handlebars" data-template-name="salesAgent">
+
+		<script type="text/x-handlebars" data-template-name="salesAgents/detail">
 			<img {{bindAttr src="imageUrl"}} alt="Photo" />
 			<h2>{{name}}</h2>
 			{{location.name}}

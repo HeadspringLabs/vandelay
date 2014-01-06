@@ -15,6 +15,7 @@ App.Adapter = Ember.RESTAdapter.extend({
 
 App.Router.map(function () {
 	this.route("locations");
-	this.route("salesAgents");
-	this.resource("salesAgent", {path:"/salesAgents/:id"});
+	this.resource("salesAgents", function () {
+		this.resource('salesAgents.detail', { path: ":id" });
+	});
 });
