@@ -1,11 +1,23 @@
 ﻿<script type="text/x-handlebars" data-template-name="application">
-	<h1>Vandelay Industries</h1>
-	<nav><ul>
-	<li> {{#linkTo "index"}} Home {{/linkTo}} </li>
-	<li> {{#linkTo "salesAgents"}} Agents {{/linkTo}} </li>
-	<li> {{#linkTo "locations"}} Locations {{/linkTo}} </li>
-	</ul></nav>
-	{{outlet}}
+	<div class="row">
+		<div class="large-12 columns regular-background">
+			<h1 class="title"><img src="@Url.Content("~/Content/logo.png")" alt="Vandelay Industries" /></h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 medium-12 columns regular-background">
+			<nav class="main-nav small-4 small-centered column">
+				{{#linkTo "index"}} Home {{/linkTo}}
+				{{#linkTo "salesAgents"}} Agents {{/linkTo}}
+				{{#linkTo "locations"}} Locations {{/linkTo}}
+			</nav>
+		</div>
+	</div>
+	<div class="row main-content">
+		<div class="large-12 columns">
+			{{outlet}}
+		</div>
+	</div>
 </script>
 		
 <script type="text/x-handlebars" data-template-name="index">
@@ -15,78 +27,108 @@
 </script>
 		
 <script type="text/x-handlebars" data-template-name="locations">
-	<h2>Locations</h2>
-	<p>Ubiquitous deliverables podcasting; mesh dynamic infrastructures embrace one-to-one harness ecologies repurpose transition. Life-hacks utilize; integrate design, incentivize revolutionize; viral schemas strategic vortals virtual content. E-commerce engage dynamic transparent B2C e-markets; bandwidth, remix reintermediate; open-source; life-hacks e-enable envisioneer. Synergies scalable user-centred blogospheres; networks matrix dynamic communities 24/7 functionalities." Vortals, robust virtual plug-and-play, podcasts 24/365 widgets wireless long-tail share; integrated frictionless evolve. Tagclouds feeds long-tail reintermediate frictionless tag, synthesize open-source share synergies dot-com solutions front-end sexy channels bricks-and-clicks beta-test. Repurpose disintermediate syndicate systems, sexy reintermediate addelivery revolutionary. Technologies; dynamic whiteboard integrate syndicate dynamic. Integrate, monetize scale cross-media vertical brand world-class podcasts incentivize utilize clicks-and-mortar virtual infomediaries.</p>
-	{{#each}}
-		<h3>{{name}}</h3>
-		<h4>Office</h4>
-		Address: {{address.address1}} {{address.address2}}
-		<br/> City: {{address.city}}
-		<br/> State: {{address.state}}
-		<br/> Country: {{address.country}}
-	{{/each}}
+	<div class="row"><div class="medium-12 column">
+		<h2>Locations</h2>
+		<p>Ubiquitous deliverables podcasting; mesh dynamic infrastructures embrace one-to-one harness ecologies repurpose transition. Life-hacks utilize; integrate design, incentivize revolutionize; viral schemas strategic vortals virtual content. E-commerce engage dynamic transparent B2C e-markets; bandwidth, remix reintermediate; open-source; life-hacks e-enable envisioneer. Synergies scalable user-centred blogospheres; networks matrix dynamic communities 24/7 functionalities." Vortals, robust virtual plug-and-play, podcasts 24/365 widgets wireless long-tail share; integrated frictionless evolve. Tagclouds feeds long-tail reintermediate frictionless tag, synthesize open-source share synergies dot-com solutions front-end sexy channels bricks-and-clicks beta-test. Repurpose disintermediate syndicate systems, sexy reintermediate addelivery revolutionary. Technologies; dynamic whiteboard integrate syndicate dynamic. Integrate, monetize scale cross-media vertical brand world-class podcasts incentivize utilize clicks-and-mortar virtual infomediaries.</p>
+	</div></div>
+	<div class="row">
+		{{#each}}
+			<div class="medium-6 column">
+			<div class="panel">
+				<h3>{{name}}</h3>
+				<p>Est. 2000</p>
+				<h4>Office</h4>
+				Address: {{address.address1}} {{address.address2}}
+				<br/> City: {{address.city}}
+				<br/> State: {{address.state}}
+				<br/> Country: {{address.country}}
+			</div>
+			</div>
+		{{/each}}
+	</div>
 </script>
 
 <script type="text/x-handlebars" data-template-name="salesAgents">
-	<h2>Sales Agents</h2>
-	<p>Holistic implement schemas bandwidth visionary aggregate distributed innovative Cluetrain; collaborative dynamic customized reinvent. Engineer, e-services schemas world-class synergistic maximize vortals applications semantic, "clicks-and-mortar relationships," B2B, leverage viral. </p>
-	<p>Collaborative, standards-compliant rss-capable web-readiness B2B addelivery leading-edge citizen-media viral magnetic. Productize, blogospheres 24/365 sexy visualize e-business B2C customized repurpose, synergies; podcasting relationships iterate experiences utilize cultivate rich-clientAPIs. Mashups bleeding-edge empower data-driven e-markets mashups. Users collaborative streamline systems systems engineer utilize matrix target. Orchestrate killer supply-chains next-generation, aggregate tagclouds beta-test revolutionize wikis functionalities user-centred, "incubate: target maximize matrix mesh," facilitate one-to-one revolutionize, mashups; drive matrix! Paradigms dynamic extensible interactive enhance next-generation metrics seize." Models reinvent, eyeballs granular, utilize functionalities; granular aggregate reinvent frictionless infomediaries solutions, sticky. Long-tail long-tail; infomediaries, brand platforms engineer streamline viral generate extensible, convergence out-of-the-box systems wikis ubiquitous, "monetize initiatives." Supply-chains engage revolutionary dynamic revolutionize solutions podcasts content supply-chains post.</p>
-	<nav><ul>
-		{{#each agent in controller}}
-				<li>{{#linkTo "salesAgents.detail" agent}} {{agent.name}} {{/linkTo}}</li>
-		{{else}}
-			<li>No Agents Found</li>
-		{{/each}}
-	</ul></nav>
-	{{outlet}}
+	<div class="row"><div class="medium-12 column">
+		<h2>Sales Agents</h2>
+		<p>Holistic implement schemas bandwidth visionary aggregate distributed innovative Cluetrain; collaborative dynamic customized reinvent. Engineer, e-services schemas world-class synergistic maximize vortals applications semantic, "clicks-and-mortar relationships," B2B, leverage viral. </p>
+		<p>Collaborative, standards-compliant rss-capable web-readiness B2B addelivery leading-edge citizen-media viral magnetic. Productize, blogospheres 24/365 sexy visualize e-business B2C customized repurpose, synergies; podcasting relationships iterate experiences utilize cultivate rich-clientAPIs. Mashups bleeding-edge empower data-driven e-markets mashups. Users collaborative streamline systems systems engineer utilize matrix target. Orchestrate killer supply-chains next-generation, aggregate tagclouds beta-test revolutionize wikis functionalities user-centred, "incubate: target maximize matrix mesh," facilitate one-to-one revolutionize, mashups; drive matrix! Paradigms dynamic extensible interactive enhance next-generation metrics seize." Models reinvent, eyeballs granular, utilize functionalities; granular aggregate reinvent frictionless infomediaries solutions, sticky. Long-tail long-tail; infomediaries, brand platforms engineer streamline viral generate extensible, convergence out-of-the-box systems wikis ubiquitous, "monetize initiatives." Supply-chains engage revolutionary dynamic revolutionize solutions podcasts content supply-chains post.</p>
+	</div></div>
+	<div class="row">
+		<nav class="medium-12 medium-centered column sub-nav">
+			{{#each agent in controller}}
+				{{#linkTo "salesAgents.detail" agent}} {{agent.name}} {{/linkTo}}
+			{{else}}
+				<li>No Agents Found</li>
+			{{/each}}
+		</nav>
+	</div>
+	<div class="row"><div class="medium-12 column">
+		{{outlet}}
+	</div></div>
 </script>
 
 <script type="text/x-handlebars" data-template-name="salesAgents/detail">
-	<img {{bindAttr src="imageUrl"}} alt="Photo" />
-	<h2>{{name}}</h2>
-	{{location.name}}
-	<h3>Imports</h3>
-	<table>
-		<thead><tr>
-			<th>Name</th>
-			<th>Type</th>
-			<th>From</th>
-			<th>Quantity</th>
-			<th>Price</th>
-		</tr></thead>
-		<tbody>
-	{{#each import in imports}}
-		<tr>
-			<td>{{import.name}}</td>
-			<td>{{import.type}}</td>
-			<td>{{import.from}}</td>
-			<td>{{import.quantity}}</td>
-			<td>${{import.price}}</td>
-		</tr>
-	{{/each}}
-		</tbody>
-	</table>
-	<h3>Exports</h3>
-	<table>
-		<thead><tr>
-			<th>Name</th>
-			<th>Measure</th>
-			<th>To</th>
-			<th>Quantity</th>
-			<th>Price</th>
-		</tr></thead>
-		<tbody>
-	{{#each export in exports}}
-		<tr>
-			<td>{{export.name}}</td>
-			<td>{{export.measure}}</td>
-			<td>{{export.to}}</td>
-			<td>{{export.quantity}}</td>
-			<td>${{export.price}}</td>
-		</tr>
-	{{/each}}
-		</tbody>
-	</table>		
+	<div class="row">
+		<div class="medium-5 column" style="text-align: center; border-right: 3px solid black">
+			<img {{bindAttr src="imageUrl"}} alt="Agent Photo" class="agent-photo"/>
+		</div>
+		<div class="medium-7 column">
+			<div class="panel" style="min-height:200px">	
+				<h2>{{name}}</h2>
+				{{location.name}}
+			</div>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="medium-6 column">
+			<h3>Imports</h3>
+				<table>
+					<thead><tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>From</th>
+						<th>Quantity</th>
+						<th>Price</th>
+					</tr></thead>
+					<tbody>
+				{{#each import in imports}}
+					<tr>
+						<td>{{import.name}}</td>
+						<td>{{import.type}}</td>
+						<td>{{import.from}}</td>
+						<td>{{import.quantity}}</td>
+						<td>${{import.price}}</td>
+					</tr>
+				{{/each}}
+					</tbody>
+				</table>
+		</div>
+		<div class="medium-6 column">
+			<h3>Exports</h3>
+			<table>
+				<thead><tr>
+					<th>Name</th>
+					<th>Measure</th>
+					<th>To</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr></thead>
+				<tbody>
+			{{#each export in exports}}
+				<tr>
+					<td>{{export.name}}</td>
+					<td>{{export.measure}}</td>
+					<td>{{export.to}}</td>
+					<td>{{export.quantity}}</td>
+					<td>${{export.price}}</td>
+				</tr>
+			{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
 </script>
 
 

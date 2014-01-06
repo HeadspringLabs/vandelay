@@ -1,0 +1,49 @@
+﻿body {
+	background-color: #343234;
+}
+
+h2 {
+	padding-top: 10px;
+}
+
+table {
+	width: 100%;
+}
+
+.row {
+	background-color: #ddd;
+}
+
+.regular-background {
+	background-color: #343234;
+	color: #dddddd;
+}
+
+.title {
+	padding-top: 10px;
+	text-align: center;
+	color: #CCE6A4;
+}
+
+.main-nav {
+	padding-bottom: 20px;
+}
+
+.main-nav a {
+	font-size: 120%;
+	color: #FCF2D4;
+}
+
+.main-nav a, .sub-nav a {
+	padding: 5px 15px;
+}
+
+.main-content {
+	min-height: 800px;
+	margin-bottom: 40px;
+}
+
+.agent-photo {
+	max-width: 100%;
+	max-height: 200px;
+}

@@ -31,6 +31,7 @@ namespace Core
 
 	        var styleBundle = new StyleBundle("~/Content/css")
 		        .IncludeDirectory("~/Content/Foundation/", "*.css")
+				.Include("~/Content/styles.css")
 		        ;
 
 			bundles.Add(emberBundle);

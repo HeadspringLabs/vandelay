@@ -193,6 +193,7 @@
     <Content Include="Content\Foundation\foundation.css" />
     <Content Include="Content\Foundation\foundation.mvc.css" />
     <Content Include="Content\Foundation\normalize.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Headspring\LICENSE.txt" />
