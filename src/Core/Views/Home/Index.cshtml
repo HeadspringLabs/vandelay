@@ -78,8 +78,8 @@
 				<h2>{{name}}</h2>
 				<p>{{location.name}}</p>
 				<p>
-					Net Imports: <strong>{{netImports}}</strong> <br />
-					Net Exports: <strong>{{netExports}}</strong>
+					Net Imports: <strong>{{dollars netImports}}</strong> <br />
+					Net Exports: <strong>{{dollars netExports}}</strong>
 				</p>
 			</div>
 		</div>
@@ -103,7 +103,7 @@
 						<td>{{import.type}}</td>
 						<td>{{import.from}}</td>
 						<td>{{import.quantity}}</td>
-						<td>${{import.price}}</td>
+						<td>{{dollars import.price}}</td>
 					</tr>
 				{{/each}}
 					</tbody>
@@ -126,7 +126,7 @@
 					<td>{{export.measure}}</td>
 					<td>{{export.to}}</td>
 					<td>{{export.quantity}}</td>
-					<td>${{export.price}}</td>
+					<td>{{dollars export.price}}</td>
 				</tr>
 			{{/each}}
 				</tbody>

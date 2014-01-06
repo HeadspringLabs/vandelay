@@ -25,6 +25,7 @@ namespace Core
 				{
 					"~/Scripts/app.js"
 					, "~/Scripts/models.js"
+					, "~/Scripts/handlebarHelpers.js"
 				})
 				.IncludeDirectory("~/Scripts/Pages/", "*.js")
 				;

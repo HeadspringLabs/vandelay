@@ -193,12 +193,14 @@
     <Content Include="Content\Foundation\foundation.css" />
     <Content Include="Content\Foundation\foundation.mvc.css" />
     <Content Include="Content\Foundation\normalize.css" />
+    <Content Include="Content\logo.png" />
     <Content Include="Content\styles.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="Content\favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Headspring\LICENSE.txt" />
     <None Include="Scripts\Vendor\jquery-1.8.3.intellisense.js" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\handlebarHelpers.js" />
     <Content Include="Scripts\Vendor\Foundation\foundation.abide.js" />
     <Content Include="Scripts\Vendor\Foundation\foundation.accordion.js" />
     <Content Include="Scripts\Vendor\Foundation\foundation.alert.js" />
