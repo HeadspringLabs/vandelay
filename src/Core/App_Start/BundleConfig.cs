@@ -16,6 +16,10 @@ namespace Core
 				})
 				;
 
+	        var foundationScriptsBundle = new ScriptBundle("~/bundles/foundation")
+				.Include("~/Scripts/Vendor/Foundation/foundation.js")
+		        .IncludeDirectory("~/Scripts/Vendor/Foundation/", "*.js");
+
 			var appBundle = new ScriptBundle("~/bundles/app")
 				.Include(new[]
 				{
@@ -25,8 +29,14 @@ namespace Core
 				.IncludeDirectory("~/Scripts/Pages/", "*.js")
 				;
 
+	        var styleBundle = new StyleBundle("~/Content/css")
+		        .IncludeDirectory("~/Content/Foundation/", "*.css")
+		        ;
+
 			bundles.Add(emberBundle);
 			bundles.Add(appBundle);
+			bundles.Add(foundationScriptsBundle);
+			bundles.Add(styleBundle);
         }
     }
 }

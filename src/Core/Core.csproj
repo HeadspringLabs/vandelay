@@ -190,11 +190,29 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Foundation\foundation.css" />
+    <Content Include="Content\Foundation\foundation.mvc.css" />
+    <Content Include="Content\Foundation\normalize.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Headspring\LICENSE.txt" />
     <None Include="Scripts\Vendor\jquery-1.8.3.intellisense.js" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.abide.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.accordion.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.alert.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.clearing.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.dropdown.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.interchange.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.joyride.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.magellan.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.offcanvas.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.orbit.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.reveal.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.tab.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.tooltip.js" />
+    <Content Include="Scripts\Vendor\Foundation\foundation.topbar.js" />
     <Content Include="Scripts\models.js" />
     <Content Include="Scripts\Pages\locations.js" />
     <Content Include="Scripts\Pages\salesAgents.js" />
