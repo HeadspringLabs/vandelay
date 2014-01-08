@@ -191,8 +191,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\app\js\app.js" />
-    <Content Include="Content\app\js\controllers.js" />
-    <Content Include="Content\app\js\resources.js" />
+    <Content Include="Content\app\js\controllers\SalesAgentCtrl.js" />
+    <Content Include="Content\app\js\controllers\LocationCtrl.js" />
+    <Content Include="Content\app\js\resources\Location.js" />
+    <Content Include="Content\app\js\resources\SalesAgent.js" />
     <Content Include="Content\app\partials\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

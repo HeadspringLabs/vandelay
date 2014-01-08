@@ -15,8 +15,8 @@ namespace Core
             ));
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Content/app/js/app.js",
-                "~/Content/app/js/resources.js",
-                "~/Content/app/js/controllers.js"
+                "~/Content/app/js/resources/*.js",
+                "~/Content/app/js/controllers/*.js"
             ));
         }
     }
