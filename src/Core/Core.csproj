@@ -193,6 +193,7 @@
     <Content Include="Content\app\js\app.js" />
     <Content Include="Content\app\js\controllers\SalesAgentCtrl.js" />
     <Content Include="Content\app\js\controllers\LocationCtrl.js" />
+    <Content Include="Content\app\js\resources\Enumeration.js" />
     <Content Include="Content\app\js\resources\Location.js" />
     <Content Include="Content\app\js\resources\SalesAgent.js" />
     <Content Include="Content\app\partials\index.html" />

@@ -45,6 +45,15 @@
                 <label>Country: <input ng-model="location.address.country" /></label>
             </div>
             <div class="control-group">
+                <label>Jurisdiction:
+                    <select ng-model="location.jurisdiction">
+                        <option ng-repeat="jurisdiction in jurisdictions" value="{{ jurisdiction.value }}">
+                          {{ jurisdiction.displayName }}
+                        </option>
+                    </select>
+                </label>
+            </div>
+            <div class="control-group">
                 <input type="submit" id="submit" value="Save" />
             </div>
         </form>
