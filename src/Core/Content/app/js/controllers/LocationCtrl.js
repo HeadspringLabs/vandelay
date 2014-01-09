@@ -1,5 +1,6 @@
-﻿vandelayApp.controller('LocationCtrl', ['$scope', 'Location', 'Enumeration', function ($scope, Location, Enumeration) {
+﻿vandelayApp.controller('LocationCtrl', ['$scope', '$routeParams', 'Location', 'Enumeration', function ($scope, $routeParams, Location, Enumeration) {
     $scope.locations = Location.query();
+    $routeParams.id && ($scope.location = Location.get($routeParams));
     $scope.jurisdictions = Enumeration.jurisdictions.query();
 
     $scope.save = function () {

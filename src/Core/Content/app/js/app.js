@@ -5,9 +5,30 @@ var vandelayApp = angular.module('vandelayApp', [
   'ngResource'
 ]);
 
-vandelayApp.config(['$routeProvider',
-    function (routeProvider) {
+vandelayApp.config(['$routeProvider', '$locationProvider',
+    function (routeProvider, locationProvider) {
         routeProvider.
+            when('/sales-agents', {
+                templateUrl: partialsDir + 'sales-agents.html',
+                controller: 'SalesAgentCtrl'
+            }).
+            when('/sales-agent/:id', {
+                templateUrl: partialsDir + 'sales-agent.html',
+                controller: 'SalesAgentCtrl'
+            }).
+            when('/locations', {
+                templateUrl: partialsDir + 'locations.html',
+                controller: 'LocationCtrl'
+            }).
+            when('/location/:id', {
+                templateUrl: partialsDir + 'location.html',
+                controller: 'LocationCtrl'
+            }).
+            when('/', {
+                templateUrl: partialsDir + 'index.html'
+            }).
             otherwise({ redirectTo: '/' });
+
+        locationProvider.html5Mode(true);
     }
 ]);

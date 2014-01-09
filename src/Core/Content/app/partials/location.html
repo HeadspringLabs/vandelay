@@ -1,0 +1,12 @@
+﻿<div>
+    <div ng-controller="NavigationCtrl">
+        <ul>
+            <li ng-repeat="link in links">
+                <a href="{{ link.url }}">{{ link.name }}</a>
+            </li>
+        </ul>
+    </div>
+    <div ng-controller="LocationCtrl">
+        <h2>{{ location.name }}</h2>
+    </div>
+</div>

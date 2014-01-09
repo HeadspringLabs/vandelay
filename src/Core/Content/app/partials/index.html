@@ -1,3 +1,15 @@
-﻿<div>
-    home page - {{ message }}
+﻿<div ng-controller="NavigationCtrl">
+    <ul>
+        <li ng-repeat="link in links">
+            <a href="{{ link.url }}">{{ link.name }}</a>
+        </li>
+    </ul>
+</div>
+<div ng-controller="SalesAgentCtrl">
+    <h3>Sales Agents</h3>
+    <div>
+        <li ng-repeat="agent in agents">
+            <a href="sales-agent/{{ agent.id }}">{{ agent.name }}</a>
+        </li>
+    </div>
 </div>

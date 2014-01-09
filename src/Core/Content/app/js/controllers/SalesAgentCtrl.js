@@ -1,5 +1,6 @@
-﻿vandelayApp.controller('SalesAgentCtrl', ['$scope', 'SalesAgent', function ($scope, SalesAgent) {
+﻿vandelayApp.controller('SalesAgentCtrl', ['$scope', '$routeParams', 'SalesAgent', function ($scope, $routeParams, SalesAgent) {
     $scope.agents = SalesAgent.query();
+    $routeParams.id && ($scope.agent = SalesAgent.get($routeParams));
 
     $scope.save = function () {
         SalesAgent.save($scope.agent, function (agent) {
