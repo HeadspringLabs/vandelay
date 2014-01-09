@@ -191,12 +191,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\app\js\app.js" />
+    <Content Include="Content\app\js\controllers\ImportCtrl.js" />
     <Content Include="Content\app\js\controllers\NavigationCtrl.js" />
     <Content Include="Content\app\js\controllers\SalesAgentCtrl.js" />
     <Content Include="Content\app\js\controllers\LocationCtrl.js" />
+    <Content Include="Content\app\js\resources\Import.js" />
     <Content Include="Content\app\js\resources\Enumeration.js" />
     <Content Include="Content\app\js\resources\Location.js" />
     <Content Include="Content\app\js\resources\SalesAgent.js" />
+    <Content Include="Content\app\partials\imports.html" />
+    <Content Include="Content\app\partials\import.html" />
     <Content Include="Content\app\partials\locations.html" />
     <Content Include="Content\app\partials\sales-agents.html" />
     <Content Include="Content\app\partials\location.html" />

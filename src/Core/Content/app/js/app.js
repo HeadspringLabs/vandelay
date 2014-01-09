@@ -8,6 +8,14 @@ var vandelayApp = angular.module('vandelayApp', [
 vandelayApp.config(['$routeProvider', '$locationProvider',
     function (routeProvider, locationProvider) {
         routeProvider.
+            when('/imports', {
+                templateUrl: partialsDir + 'imports.html',
+                controller: 'ImportCtrl'
+            }).
+            when('/import/:id', {
+                templateUrl: partialsDir + 'import.html',
+                controller: 'ImportCtrl'
+            }).
             when('/sales-agents', {
                 templateUrl: partialsDir + 'sales-agents.html',
                 controller: 'SalesAgentCtrl'
