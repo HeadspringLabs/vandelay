@@ -1,3 +1,15 @@
 ﻿<div ng-controller="LocationCtrl">
     <h2>{{ location.name }}</h2>
+    <dl>
+        <dt>Address:</dt>
+        <dd>
+            <address>
+                <div>{{ location.address.address1 }}</div>
+                <div ng-if="location.address.address2">{{ location.address.address2 }}</div>
+                <div>{{ location.address.city }}, {{ location.address.state }} {{ location.address.country }}</div>
+            </address>
+        </dd>
+        <dt>Jurisdiction:</dt>
+        <dd>{{ location.jurisdiction.displayName }}</dd>
+    </dl>
 </div>
