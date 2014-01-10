@@ -1,14 +1,24 @@
 ﻿<div ng-controller="SalesAgentCtrl">
     <h2>{{ agent.name }}</h2>
     <div class="row">
-        <div class="large-6 columns">
+        <div class="large-4 columns">
             <img src="{{ agent.imageUrl }}" height="200" width="200" />
         </div>
-        <div class="large-6 columns">
+        <div class="large-4 columns">
             <h4>Currently Importing</h4>
             <ul>
                 <li ng-repeat="import in agent.imports">
-                    {{ import.name }}
+                    {{ import.name }} - 
+                    <small><a ng-click="remove(import)">Delete</a></small>
+                </li>
+            </ul>
+        </div>
+        <div class="large-4 columns">
+            <h4>Available Imports</h4>
+            <input type="search" ng-model="q" placeholder="Filter imports..." />
+            <ul>
+                <li ng-repeat="import in availableImports | filter:q">
+                    {{ import.name }} - <a href="#" ng-click="add(import)">Add</a>
                 </li>
             </ul>
         </div>
