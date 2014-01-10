@@ -8,6 +8,8 @@ namespace Core.Controllers
     using System.Linq;
     using Models;
 
+    public class CurrencyController : EnumerationController<Currency> { }
+
     public class ImportTypeController : EnumerationController<ImportType> { }
 
     public class MeasureController : EnumerationController<Measure> { }
