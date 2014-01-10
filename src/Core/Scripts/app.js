@@ -17,5 +17,6 @@ App.Router.map(function () {
 	this.route("locations");
 	this.resource("salesAgents", function () {
 		this.resource('salesAgents.detail', { path: ":id" });
+		this.resource('salesAgents.add', { path: "/add" });
 	});
 });

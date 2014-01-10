@@ -9,3 +9,7 @@
 
 	return '$' + withCommas;
 });
+
+Ember.Handlebars.helper('label', function(text) {
+	return new Handlebars.SafeString('<label>' + text + '</label>');
+});

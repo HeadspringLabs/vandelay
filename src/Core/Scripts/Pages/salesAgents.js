@@ -32,3 +32,16 @@ App.SalesAgentsDetailController = Ember.ObjectController.extend({
 		return sum;
 	}.property('model.exports')
 });
+
+App.SalesAgentsAddRoute = Ember.Route.extend({
+	model: function () { return App.SalesAgent.create(); },
+});
+
+App.SalesAgentsAddController = Ember.ObjectController.extend({
+	actions: {
+		saveAgent: function () {
+			this.get("model").save();
+		}
+	},
+});
+
