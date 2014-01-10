@@ -6,7 +6,7 @@
 	</div>
 	<div class="row">
 		<div class="large-12 medium-12 columns regular-background">
-			<nav class="main-nav small-4 small-centered column">
+			<nav class="main-nav small-8 small-centered column">
 				{{#linkTo "index"}} Home {{/linkTo}}
 				{{#linkTo "salesAgents"}} Agents {{/linkTo}}
 				{{#linkTo "locations"}} Locations {{/linkTo}}
@@ -76,13 +76,18 @@
 			<img {{bindAttr src="imageUrl"}} alt="Agent Photo" class="agent-photo"/>
 		</div>
 		<div class="medium-7 column">
-			<div class="panel" style="min-height:200px">	
-				<h2>{{name}}</h2>
-				<p>{{location.name}}</p>
-				<p>
-					Net Imports: <strong>{{dollars netImports}}</strong> <br />
-					Net Exports: <strong>{{dollars netExports}}</strong>
-				</p>
+			<div class="row panel" style="min-height:200px">
+				<div class="medium-8 column">
+					<h2>{{name}}</h2>
+					<p>{{location.name}}</p>
+					<p>
+						Net Imports: <strong>{{dollars netImports}}</strong> <br />
+						Net Exports: <strong>{{dollars netExports}}</strong>
+					</p>
+				</div>
+				<div class="medium-4 column">
+					<button {{action deleteAgent}}> Delete </button>
+				</div>
 			</div>
 		</div>
 	</div>

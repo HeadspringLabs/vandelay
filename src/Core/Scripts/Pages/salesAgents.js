@@ -15,6 +15,12 @@ App.SalesAgentsDetailRoute = Ember.Route.extend({
 });
 
 App.SalesAgentsDetailController = Ember.ObjectController.extend({
+	actions: {
+		deleteAgent: function() {
+			this.get('model').deleteRecord();
+			this.transitionToRoute('salesAgents.index');
+		}
+	},
 	netImports: function () {
 		var sum = 0;
 		var imports = this.get('imports');
