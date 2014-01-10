@@ -1,25 +1,33 @@
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using Headspring;
-
 namespace Core.Controllers
 {
+    using System.Collections;
+    using System.Net;
+    using System.Net.Http;
+    using System.Web.Http;
+    using Headspring;
+    using System.Linq;
     using Models;
+
+    public class CurrencyController : EnumerationController<Currency> { }
+
+    public class ImportTypeController : EnumerationController<ImportType> { }
+
+    public class MeasureController : EnumerationController<Measure> { }
 
     public class JurisdictionController : EnumerationController<Jurisdiction> { }
 
     public abstract class EnumerationController<T> : ApiController where T : Enumeration<T>
     {
-        public IEnumerable<T> Get()
+        public IEnumerable Get()
         {
-            return Enumeration<T>.GetAll();
+            return Enumeration<T>.GetAll()
+                .Select(x => new { x.Value, x.DisplayName });
         }
 
-        public T Get(int id)
+        public object Get(int id)
         {
-            return Enumeration<T>.FromValue(id);
+            var @enum = Enumeration<T>.FromValue(id);
+            return new { @enum.Value, @enum.DisplayName };
         }
 
         public HttpResponseMessage Delete()
