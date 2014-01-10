@@ -1,16 +1,7 @@
-﻿<div>
-    <div ng-controller="NavigationCtrl">
-        <ul>
-            <li ng-repeat="link in links">
-                <a href="{{ link.url }}">{{ link.name }}</a>
-            </li>
-        </ul>
-    </div>
-    <div ng-controller="ImportCtrl">
-        <h2>{{ _import.name }}</h2>
-        <p>
-            Importing {{ _import.name }} from {{ _import.from.displayName }}.
-            This is considered {{ _import.type.displayName }}.
-        </p>
-    </div>
+﻿<div ng-controller="ImportCtrl">
+    <h2>{{ _import.name }}</h2>
+    <p>
+        Importing {{ _import.name }} from {{ _import.from.displayName }}.
+        This is considered {{ _import.type.displayName }}.
+    </p>
 </div>

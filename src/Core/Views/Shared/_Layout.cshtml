@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width" />
     <base href="@Url.Content("~")" />
     <title>@ViewBag.Title</title>
-@*@Styles.Render("~/Content/css")*@
+@Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/angular")
 @Scripts.Render("~/bundles/app")
 </head>
-<body>
-@RenderBody()
-@RenderSection("scripts", required: false)
-</body>
+    <body>
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+    </body>
 </html>
