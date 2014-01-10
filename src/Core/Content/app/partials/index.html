@@ -1,13 +1,18 @@
 ﻿<div ng-controller="SalesAgentCtrl">
     <h3>Sales Agents</h3>
-    <div>
-        <ul class="large-block-grid-4">
-            <li ng-repeat="agent in agents">
-                <a href="sales-agent/{{ agent.id }}">
-                    <strong>{{ agent.name }}</strong><br />
-                    <img src="{{ agent.imageUrl }}" />
-                </a>
-            </li>
-        </ul>
+    <div class="row">
+        <div class="large-12 columns">
+            <label>Search: <input type="search" ng-model="q" placeholder="Find agents..." /></label>
+        </div>
+        <div class="large-12 columns">
+            <ul class="large-block-grid-4">
+                <li ng-repeat="agent in agents | filter:q">
+                    <a href="sales-agent/{{ agent.id }}">
+                        <strong>{{ agent.name }}</strong><br />
+                        <img src="{{ agent.imageUrl }}" />
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
