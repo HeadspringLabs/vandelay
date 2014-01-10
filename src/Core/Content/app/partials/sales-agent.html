@@ -1,3 +1,16 @@
 ﻿<div ng-controller="SalesAgentCtrl">
     <h2>{{ agent.name }}</h2>
+    <div class="row">
+        <div class="large-6 columns">
+            <img src="{{ agent.imageUrl }}" height="200" width="200" />
+        </div>
+        <div class="large-6 columns">
+            <h4>Currently Importing</h4>
+            <ul>
+                <li ng-repeat="import in agent.imports">
+                    {{ import.name }}
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

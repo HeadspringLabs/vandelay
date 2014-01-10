@@ -1,38 +1,33 @@
 ﻿<div ng-controller="ImportCtrl">
     <h2>Imports</h2>
-    <ul>
-        <li ng-repeat="_import in imports">
-            <a href="import/{{ _import.id }}">{{ _import.name }}</a>
-            <button ng-click="delete(_import)">Delete</button>
-        </li>
-    </ul>
-    <div>
-        <h4>Add New</h4>
-        <form ng-submit="save()" ng-model="_import">
-            <div class="control-group">
-                <label>Name: <input ng-model="_import.name" /></label>
-            </div>
-            <div class="control-group">
-                <label>From:
-                    <select ng-model="_import.from">
-                        <option ng-repeat="jurisdiction in jurisdictions" value="{{ jurisdiction.value }}">
-                            {{ jurisdiction.displayName }}
-                        </option>
-                    </select>
-                </label>
-            </div>
-            <div class="control-group">
-                <label>Import Type:
-                    <select ng-model="_import.type">
-                        <option ng-repeat="type in types" value="{{ type.value }}">
-                            {{ type.displayName }}
-                        </option>
-                    </select>
-                </label>
-            </div>
-            <div class="control-group">
-                <input type="submit" id="submit" value="Save" />
-            </div>
-        </form>
+    <div class="row">
+        <div class="large-6 columns">
+            <ul>
+                <li ng-repeat="_import in imports">
+                    <a href="import/{{ _import.id }}">{{ _import.name }}</a> - 
+                    <small><a ng-click="delete(_import)">Delete</a></small>
+                </li>
+            </ul>
+        </div>
+        <div class="large-6 columns">
+            <h4>Add New</h4>
+            <form ng-submit="save()" ng-model="_import">
+                <div class="control-group">
+                    <label>Name: <input type="text" ng-model="_import.name" /></label>
+                </div>
+                <div class="control-group">
+                    <label>From:
+                        <select ng-model="_import.from">
+                            <option ng-repeat="jurisdiction in jurisdictions" value="{{ jurisdiction.value }}">
+                                {{ jurisdiction.displayName }}
+                            </option>
+                        </select>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <input type="submit" id="submit" value="Save" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>

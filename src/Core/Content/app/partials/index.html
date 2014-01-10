@@ -1,8 +1,13 @@
 ﻿<div ng-controller="SalesAgentCtrl">
     <h3>Sales Agents</h3>
     <div>
-        <li ng-repeat="agent in agents">
-            <a href="sales-agent/{{ agent.id }}">{{ agent.name }}</a>
-        </li>
+        <ul class="large-block-grid-4">
+            <li ng-repeat="agent in agents">
+                <a href="sales-agent/{{ agent.id }}">
+                    <strong>{{ agent.name }}</strong><br />
+                    <img src="{{ agent.imageUrl }}" />
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
