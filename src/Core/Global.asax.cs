@@ -10,6 +10,11 @@ namespace Core
 
     public class WebApiApplication : System.Web.HttpApplication
     {
+        private const string Angular = "Angular";
+        private const string Ember = "Ember";
+
+        public static string CurrentUI = Angular;
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

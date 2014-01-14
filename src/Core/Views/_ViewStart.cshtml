@@ -1,3 +1,4 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@using Core
+@{
+    Layout = string.Format("~/Views/Shared/_{0}Layout.cshtml", WebApiApplication.CurrentUI);
 }

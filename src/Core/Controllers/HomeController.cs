@@ -6,7 +6,7 @@ namespace Core.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(WebApiApplication.CurrentUI);
         }
     }
 }

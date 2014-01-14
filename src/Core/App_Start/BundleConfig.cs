@@ -12,7 +12,7 @@ namespace Core
                 "~/Scripts/angular-resource.js",
                 "~/Scripts/angular-route.js"
             ));
-            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+            bundles.Add(new ScriptBundle("~/bundles/angular-app").Include(
                 "~/Content/app/js/app.js",
                 "~/Content/app/js/resources/*.js",
                 "~/Content/app/js/controllers/*.js"
@@ -31,7 +31,7 @@ namespace Core
 				.Include("~/Scripts/Vendor/Foundation/foundation.js")
 		        .IncludeDirectory("~/Scripts/Vendor/Foundation/", "*.js");
 
-			var appBundle = new ScriptBundle("~/bundles/app")
+			var appBundle = new ScriptBundle("~/bundles/ember-app")
 				.Include(new[]
 				{
 					"~/Scripts/app.js"
