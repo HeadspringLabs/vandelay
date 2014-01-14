@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Core
 {
@@ -18,9 +17,38 @@ namespace Core
                 "~/Content/app/js/resources/*.js",
                 "~/Content/app/js/controllers/*.js"
             ));
-            bundles.Add(new StyleBundle("~/Content/css")
-                .IncludeDirectory("~/Content/Foundation/", "*.css")
-                .Include("~/Content/styles.css"));
+
+			var emberBundle = new ScriptBundle("~/bundles/ember")
+				.Include( new[] {
+					  "~/Scripts/Vendor/jquery-{version}.js"
+					, "~/Scripts/Vendor/handlebars-{version}.js"	
+					, "~/Scripts/Vendor/ember-{version}.js"	
+					, "~/Scripts/Vendor/ember-model.js"	
+				})
+				;
+
+	        var foundationScriptsBundle = new ScriptBundle("~/bundles/foundation")
+				.Include("~/Scripts/Vendor/Foundation/foundation.js")
+		        .IncludeDirectory("~/Scripts/Vendor/Foundation/", "*.js");
+
+			var appBundle = new ScriptBundle("~/bundles/app")
+				.Include(new[]
+				{
+					"~/Scripts/app.js"
+					, "~/Scripts/models.js"
+				})
+				.IncludeDirectory("~/Scripts/Pages/", "*.js")
+				;
+
+	        var styleBundle = new StyleBundle("~/Content/css")
+		        .IncludeDirectory("~/Content/Foundation/", "*.css")
+				.Include("~/Content/styles.css")
+		        ;
+
+			bundles.Add(emberBundle);
+			bundles.Add(appBundle);
+			bundles.Add(foundationScriptsBundle);
+			bundles.Add(styleBundle);
         }
     }
 }
